@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$bg-color: rgb(70, 70, 70);
+$grey-color: rgb(120, 120, 120);
+$red-color: rgb(255, 116, 116);
+$white-color: rgb(255,255,255);
+
+@mixin font-style{
+    font-family: 'Inter', sans-serif;
+    // 400-regular 500-medium 700-bold
+    font-weight: 400;
+}
+
+body, *{
+    margin: 0;
+    padding: 0;
+}
+
+.bg{
+    width: calc(1920px); height: 600px;
+    overflow: hidden;
+    background-color: $bg-color;
+
+    .top{
+        height: 120px;
+        width: calc(100% - 700px);
+        display: flex;
+
+        .now{
+            background-color: $red-color;
+            width: 210px; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include font-style;
+            font-size: 48px;
+            color: $bg-color;
+        }
+
+        .marquee{
+            background-color: $red-color;
+            height: 100%;
+            width: calc(100% - 253px) ;
+            padding-left: 40px;
+            margin-left: 3px;
+            display: flex;
+            align-items: center;
+
+            p{
+                white-space: nowrap;
+                @include font-style;
+                font-size: 40px;
+                color: $bg-color;
+            }
+        }
+    }
+
+    .main{
+        width: calc(100% - 700px);
+
+        .travelTime{
+            @include font-style;
+            color: $white-color;
+            font-size: 64px;
+            font-weight: 500;
+            margin-top: 70px;
+            margin-left: 70px;
+        }
+
+        .stationBox{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            padding-left: 70px;
+            padding-right: 70px;
+
+            .station{
+                @include font-style;
+                color: $white-color;
+                font-size: 44px;
+                font-weight: 400;
+                display: inline-flex;
+            }
+        }
+
+        .lineBox{
+            height: 25px; width: calc(100% - 140px) ;
+            padding-left: 70px;
+            padding-right: 70px;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+
+            .dot{
+                width: 25px; height: 25px;
+                box-sizing: border-box;
+                border: 3px solid $white-color;
+                border-radius: 50%;
+            }
+            
+            .line{
+                flex-grow: 1;
+                border: 1.5px solid $white-color;
+            }
+        }
+
+        .direction{
+            @include font-style;
+            color: $white-color;
+            font-size: 32px;
+            padding-left: 70px;
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+    
+            .material-symbols-outlined {
+                font-size: 35px;
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+            }
+
+            p{
+                margin-left: 15px;
+                display: inline-flex;
+            }
+        }
+    }
+
+    .video{
+        width: 700px; height: 600px;
+        float: right;
+        position: fixed; 
+        top: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        // .custom-video::-webkit-media-controls {
+        //     width: 700px;
+        //   }
+          
+        //   .custom-video::-webkit-media-controls-panel {
+        //     width: 700px;
+        //   }
+          
+        //   .custom-video::-webkit-media-controls-volume-slider {
+        //     width: 700px;
+        //   }
+    }
+}
