@@ -92,5 +92,5 @@ function nextStation(){
 window.addEventListener('DOMContentLoaded', (event) => {
     randomStation(); 
     // console.log(stationIndex);
-    setInterval(() => nextStation(), 3000); // 3s
+    setInterval(() => nextStation(), 12000); // 12s
 });
