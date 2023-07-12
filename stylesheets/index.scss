@@ -16,6 +16,8 @@ body, *{
     padding: 0;
 }
 
+
+
 .bg{
     width: calc(1920px); height: 600px;
     overflow: hidden;
@@ -35,6 +37,19 @@ body, *{
             @include font-style;
             font-size: 48px;
             color: $bg-color;
+
+            // ':'
+            .blink {
+                animation: blink-animation 1s steps(2, start) infinite;
+                display:flex;
+                align-items: center;
+            }
+            
+            // ':' 閃爍
+            @keyframes blink-animation {
+            from { visibility: visible; }
+            to { visibility: hidden; }
+            }
         }
 
         .marquee{
@@ -45,12 +60,28 @@ body, *{
             margin-left: 3px;
             display: flex;
             align-items: center;
+            // 跑馬燈
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
 
             p{
                 white-space: nowrap;
                 @include font-style;
                 font-size: 40px;
                 color: $bg-color;
+                // 跑馬燈
+                display: inline-block;
+                animation: marquee-animation 50s linear infinite; 
+            }
+        }
+
+        @keyframes marquee-animation {
+            0% {
+              transform: translateX(0%);
+            }
+            100% {
+              transform: translateX(-50%);
             }
         }
     }
@@ -75,6 +106,7 @@ body, *{
             padding-right: 70px;
 
             .station{
+                width: calc(100% / 3);
                 @include font-style;
                 color: $white-color;
                 font-size: 44px;

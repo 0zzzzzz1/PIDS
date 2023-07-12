@@ -27,6 +27,19 @@ body, * {
   font-size: 48px;
   color: rgb(70, 70, 70);
 }
+.bg .top .now .blink {
+  animation: blink-animation 1s steps(2, start) infinite;
+  display: flex;
+  align-items: center;
+}
+@keyframes blink-animation {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
 .bg .top .marquee {
   background-color: rgb(255, 116, 116);
   height: 100%;
@@ -35,6 +48,9 @@ body, * {
   margin-left: 3px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
 }
 .bg .top .marquee p {
   white-space: nowrap;
@@ -42,6 +58,16 @@ body, * {
   font-weight: 400;
   font-size: 40px;
   color: rgb(70, 70, 70);
+  display: inline-block;
+  animation: marquee-animation 50s linear infinite;
+}
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 .bg .main {
   width: calc(100% - 700px);
@@ -63,6 +89,7 @@ body, * {
   padding-right: 70px;
 }
 .bg .main .stationBox .station {
+  width: 33.3333333333%;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   color: rgb(255, 255, 255);
